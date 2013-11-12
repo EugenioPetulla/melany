@@ -109,8 +109,9 @@ function melany_scripts() {
 	wp_register_script( 'has-error', get_template_directory_uri() . '/js/has-error.js', array( 'jquery' ), '1.0', true );
 
 	// Enqueue styles
-	wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array('melany-style') );
+	//wp_enqueue_style( 'melany-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'melany', get_template_directory_uri() . '/less/style.less' );
+	//wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array('melany-style') );
 
 	// Enqueue scripts
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.0', false );
@@ -161,6 +162,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Load the LESS PHP compiler
+ */
+require_once get_template_directory() . '/lib/wp-less/wp-less.php';
+
+/**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+// require get_template_directory() . '/inc/jetpack.php';

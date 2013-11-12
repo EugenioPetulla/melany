@@ -5,15 +5,19 @@
 // Colors
 // -------------------------
 
+//@base-color:			#5cb85c;
+@base-color-light:		lighten( @base-color, 30% );
+@base-color-dark:		darken( @base-color, 15% );
+
 @green:					#5cb85c;
-@green-light:			lighten( @green, 30% );
-@green-dark:			darken( @green, 15% );
+@green-light:		lighten( @base-color, 30% );
+@green-dark:		darken( @base-color, 15% );
 
 // Links
 // -------------------------
 
 // Green
-@link-color:			@green;
+@link-color:			@base-color;
 
 // Typography
 // -------------------------
@@ -25,23 +29,23 @@
 @line-height-base:				1.25; // 20/16
 @line-height-widget-heading:	2.2727;
 
-@font-path-base:				"fonts/";
-@roboto-condensed-path:			"@{font-path-base}roboto-condensed/";
+@font-path-base:				"@{themeurl}/fonts";
+@roboto-condensed-path:			"@{font-path-base}/roboto-condensed/";
 
 // Iconography
 // -------------------------
 
-@icon-font-path:				"lib/bootstrap/fonts/";
+@icon-font-path:				"@{themeurl}/lib/bootstrap/fonts/";
 
 // Components
 // -------------------------
 
-@component-active-bg:			@green;
+@component-active-bg:			@base-color;
 
 // Static home page
 // -------------------------
 
-@home-body-bg:					@green-dark;
+@home-body-bg:					@base-color-dark;
 @home-text-color:				#fff;
 
 @home-font-size-base:			20px;
@@ -50,7 +54,7 @@
 // Forms
 // -------------------------
 
-@input-border-focus:			@green;
+@input-border-focus:			@base-color;
 
 
 // COMPONENT VARIABLES

@@ -110,9 +110,24 @@ function melany_customize_register( $wp_customize ) {
 			'green'			=> __( 'Green', 'melany' )
 		),
 	));
+	$wp_customize->add_setting( 'melany_link_color', array(
+		'default'			=> '#5cb85c',
+		'transport'			=> 'refresh',
+		'type'				=> 'theme_mod'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'melany_link_color', array(
+		'label'				=> __( 'Link Color', 'melany' ),
+		'section'			=> 'colors',
+		'settings'			=> 'melany_link_color'
+	)));
 
 }
 add_action( 'customize_register', 'melany_customize_register' );
+
+function melany_less_force_compile() {
+	$cache['updated'] = 0;
+}
+add_action( 'customize_save_after', 'melany_less_force_compile' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

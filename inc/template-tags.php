@@ -704,3 +704,15 @@ function melany_author_box() {
 	<?php
 }
 endif;
+
+if ( ! function_exists( 'melany_less_vars' ) ) :
+/**
+ * Pass variables to LESS
+ */
+function melany_less_vars( $vars, $handle ) {
+	// $handle is a reference to the handle used with wp_enqueue_style()
+	$vars['base-color'] = get_theme_mod('melany_link_color');
+	return $vars;
+}
+add_filter( 'less_vars', 'melany_less_vars', 10, 2 );
+endif; // Ends check for melany_less_vars

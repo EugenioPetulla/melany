@@ -1,3 +1,9 @@
 [submodule "lib/bootstrap"]
 	path = lib/bootstrap
 	url = https://github.com/deshack/wp-bootstrap
+[submodule "inc/wp-less"]
+	path = inc/wp-less
+	url = https://github.com/sanchothefat/wp-less
+[submodule "lib/wp-less"]
+	path = lib/wp-less
+	url = https://github.com/sanchothefat/wp-less
